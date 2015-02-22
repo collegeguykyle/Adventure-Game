@@ -103,6 +103,7 @@ if (is_string(nxt_on_stack) &amp;&amp; nxt_on_stack = "move")
       move++
    }
    movement = true;
+   fail_safe[move] = 0;
    ds_list_delete(stack, 0);
 }
 //Move each unit along their provided path unless they collide
@@ -119,11 +120,12 @@ if (movement = true)
          with (to_move[i]) path_speed = 5; //could change this to a unit stored value
          //to allow each unit to move along thier paths at a different rate
          var pt1 = to_move[i].moves / path_get_length(path);
-         if (to_move[i].path_position &gt;= pt1 || to_move[i].path_position = 1)
+         if (xprevious = x &amp;&amp; yprevious = y) fail_safe[i] += 1;
+         if (to_move[i].path_position &gt;= pt1 || to_move[i].path_position = 1 || fail_safe[i] = 60)
          {
             with(to_move[i]) path_end();
-            pathing_start(to_move[i]);
             ds_list_delete(stack, i);
+            pathing_start(to_move[i]); //update initial los to nodes
          }
       }
       else

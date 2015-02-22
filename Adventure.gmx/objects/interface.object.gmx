@@ -98,6 +98,7 @@ if (show_path &amp;&amp; mouse_check_button_released(mb_left)) for (i=0; i&lt;ar
    ds_list_insert(stack, 0, "move");
    ds_list_insert(stack, 1, selected);
    ds_list_insert(stack, 2, "end move");
+   take_action(selected);
    //show_path = false;
    }
 }

@@ -52,34 +52,13 @@
       <script>scripts\pathing_start.gml</script>
     </scripts>
     <script>scripts\is_even.gml</script>
+    <script>scripts\take_action.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\ft_big</font>
     <font>fonts\ft_normal</font>
   </fonts>
   <objects name="objects">
-    <objects name="Skills">
-      <object>objects\sk_defend</object>
-      <object>objects\sk_ranged</object>
-      <object>objects\sk_push</object>
-    </objects>
-    <objects name="Game Function">
-      <object>objects\game_control</object>
-      <object>objects\nav_mesh</object>
-      <object>objects\turn_control</object>
-      <object>objects\interface</object>
-      <object>objects\stack_control</object>
-    </objects>
-    <objects name="Units">
-      <object>objects\knight</object>
-      <object>objects\skelly</object>
-    </objects>
-    <objects name="Terrain">
-      <object>objects\table</object>
-      <object>objects\barrel</object>
-      <object>objects\tombstone</object>
-      <object>objects\grave</object>
-    </objects>
     <objects name="Parents">
       <object>objects\game_obj</object>
       <object>objects\player_unit</object>
@@ -92,10 +71,33 @@
       <object>objects\UI</object>
       <object>objects\move_trigger</object>
     </objects>
-    <object>objects\new_test</object>
+    <objects name="Game Function">
+      <object>objects\nav_mesh</object>
+      <object>objects\turn_control</object>
+      <object>objects\interface</object>
+      <object>objects\stack_control</object>
+    </objects>
+    <objects name="Units">
+      <object>objects\new_test</object>
+      <object>objects\skelly</object>
+    </objects>
+    <objects name="Triggers">
+      <object>objects\trap_test</object>
+      <object>objects\slow_trap_test</object>
+    </objects>
+    <objects name="Terrain">
+      <object>objects\table</object>
+      <object>objects\barrel</object>
+      <object>objects\tombstone</object>
+      <object>objects\grave</object>
+    </objects>
     <object>objects\graveyard_ai</object>
-    <object>objects\trap_test</object>
     <objects name="Old">
+      <object>objects\game_control</object>
+      <object>objects\sk_ranged</object>
+      <object>objects\sk_push</object>
+      <object>objects\sk_defend</object>
+      <object>objects\knight</object>
       <object>objects\cam_focus</object>
       <object>objects\basic_attack</object>
       <object>objects\empty</object>
@@ -106,7 +108,6 @@
       <object>objects\move_ghost</object>
       <object>objects\test_stack</object>
     </objects>
-    <object>objects\slow_trap_test</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\graveyard</room>

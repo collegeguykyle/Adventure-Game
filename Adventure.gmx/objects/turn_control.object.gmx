@@ -30,6 +30,7 @@
 //Turn Order
 update = false;
 new_order = true;
+globalvar turn_order;
 
 //Update
 who_lose = noone;
@@ -58,6 +59,7 @@ actions_lost = 0;
             <kind>1</kind>
             <string>///Turn Order
 if (new_order){
+   new_order = false;
    update = false;
    pa = 0; //player actions
    ea = 0; //enemy actions
@@ -228,6 +230,65 @@ if (update){
    //No extra actions to remove, reorganize turn as needed
    
 
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Turn Progression
+
+if (turn_order[0] = 0)
+{
+   var stack_len = ds_list_size(stack);
+   for (i=0; i&lt;stack_len; i++)
+   {
+      var stack_val = ds_list_find_value(stack, i);
+      if (is_string(stack_val) &amp;&amp; (stack_val = "player input" || stack_val = "enemy AI"))
+      {
+         stack_val = ds_list_find_value(stack, i-1);
+         var strng = is_string(stack_val);
+         if (!strng || stack_val != "turn change") ds_list_insert(stack, i, "turn change");
+      }
+   }
+}
+
+var stack_val = ds_list_find_value(stack, 0);
+if (is_string(stack_val) &amp;&amp; stack_val = "turn change")
+{
+   stack_val = ds_list_find_value(stack, 1);
+   if (is_string(stack_val) &amp;&amp; stack_val = "player input")
+   {
+      ds_list_replace(stack, 1, "enemy AI");
+      ds_list_delete(stack, 0);
+   }
+   else
+   {
+      ds_list_replace(stack, 1, "player input");
+      ds_list_delete(stack, 0);
+   }
+   var size = array_length_1d(turn_order);
+   for (i=0; i&lt;size-1; i++)
+   {
+      temp_order[i] = turn_order[i+1]
+   }
+   turn_order = 0;
+   turn_order = temp_order; 
 }
 </string>
           </argument>
