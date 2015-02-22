@@ -46,12 +46,12 @@
     </scripts>
     <scripts name="pathing">
       <script>scripts\lines_cross.gml</script>
+      <script>scripts\find_path.gml</script>
       <script>scripts\node_los.gml</script>
       <script>scripts\add_points_sqr.gml</script>
       <script>scripts\pathing_start.gml</script>
     </scripts>
     <script>scripts\is_even.gml</script>
-    <script>scripts\find_path.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\ft_big</font>
