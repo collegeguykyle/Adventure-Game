@@ -77,10 +77,14 @@ over = collision_point(mouse_x, mouse_y, game_obj, true, true);
           <argument>
             <kind>1</kind>
             <string>///Player Movement
-if (over = noone &amp;&amp; mouse_check_button(mb_right))
-{
-   find_path(selected.x, selected.y, mouse_x, mouse_y);
-   show_path = true;
+if (over = noone &amp;&amp; mouse_check_button(mb_right) &amp;&amp; selected &amp;&amp; selected.moves &gt; 0)
+{   
+   nxt_on_stack = ds_list_find_value(stack, 0);
+   if (is_string(nxt_on_stack) &amp;&amp; nxt_on_stack = "player input")
+   {
+      find_path(selected.x, selected.y, mouse_x, mouse_y);
+      show_path = true;
+   }
 }
 
 if (show_path &amp;&amp; mouse_check_button_released(mb_left)) for (i=0; i&lt;array_height_2d(move_here); i++)

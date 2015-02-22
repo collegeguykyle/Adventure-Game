@@ -57,13 +57,14 @@ movement = false;
           <argument>
             <kind>1</kind>
             <string>///Run Stack
-/*
+
 // If stack is empty either wait for player input
 // or tell AI to decide on an action to take.
 if (ds_list_empty(stack))
    {
-   if (t_who = "enemy") ds_list_insert(stack, 0, ai);
-   else if (t_who = "player") ds_list_insert(stack, 0, "Player Input");
+   //if (t_who = "enemy") ds_list_insert(stack, 0, ai);
+   //else if (t_who = "player") ds_list_insert(stack, 0, "Player Input");
+   ds_list_insert(stack, 0, "player input");
    }
    
 
@@ -135,6 +136,37 @@ if (movement = true)
       movement = false;
       ds_list_delete(stack, 0);
    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Debug, show stack
+var size = ds_list_size(stack);
+for (i=0; i&lt;size; i++)
+{
+   var nxt_on_stack = ds_list_find_value(stack, i);
+   draw_text( 10, 25, "  STACK");
+   draw_text( 10, 30, "________");
+   draw_text( 10, 50+ i*20, string(nxt_on_stack));
 }
 </string>
           </argument>
