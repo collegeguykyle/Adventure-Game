@@ -106,6 +106,7 @@
       <object>objects\move_ghost</object>
       <object>objects\test_stack</object>
     </objects>
+    <object>objects\slow_trap_test</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\graveyard</room>

@@ -115,7 +115,8 @@ if (movement = true)
       var trigger = collision_point(to_move[i].x, to_move[i].y, move_trigger, true, false);
       if (!trigger || trigger.active = false)
       {
-         with (to_move[i]) path_speed = 5;
+         with (to_move[i]) path_speed = 5; //could change this to a unit stored value
+         //to allow each unit to move along thier paths at a different rate
          var pt1 = to_move[i].moves / path_get_length(path);
          if (to_move[i].path_position &gt;= pt1)
          {

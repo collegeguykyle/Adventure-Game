@@ -104,6 +104,7 @@
     <instance objName="new_test" x="600" y="1600" name="inst_1DE0379F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="nav_mesh" x="400" y="2050" name="inst_106C4792" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="trap_test" x="800" y="1400" name="inst_542151B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="slow_trap_test" x="500" y="1450" name="inst_EF0AD6CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
